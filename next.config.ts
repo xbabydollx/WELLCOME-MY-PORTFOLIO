@@ -1,8 +1,11 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig: NextConfig = {
   output: 'export', // Wajib untuk GitHub Pages
-  basePath: '/WELLCOME-MY-PORTFOLIO', // WAJIB! Agar GitHub mengenali aset di dalam sub-folder ini
+  // Hanya pakai basePath kalau sedang di-build untuk internet (production)
+  basePath: isProd ? '/WELLCOME-MY-PORTFOLIO' : '', 
   images: {
     unoptimized: true,
   },

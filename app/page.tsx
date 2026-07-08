@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Navbar from "@/components/Navbar"; // <-- 1. Diimport di sini
+import Navbar from "@/components/Navbar";
+import SpiderWebBg from "@/components/SpiderWebBg";
 
 export default function Home() {
   const containerVariants = {
@@ -56,19 +57,19 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-[#090507] text-white w-full relative min-h-screen selection:bg-rose-500 selection:text-white">
+    <div className="bg-[#090507] text-white w-full relative min-h-screen selection:bg-rose-500 selection:text-white overflow-x-hidden">
       
-      <Navbar /> {/* <-- 2. Ditaruh di sini agar melayang di atas semua halaman */}
+      <Navbar />
       
-      {/* AMBIENT AURORA GLOW EFFECT (Efek Pendaran Pink Mewah) */}
+      {/* EFEK JARING LABA-LABA INTERAKTIF */}
+      <SpiderWebBg /> 
+
+      {/* AMBIENT AURORA GLOW EFFECT */}
       <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-rose-900/15 blur-[120px] pointer-events-none z-0" />
       <div className="absolute bottom-[20%] right-[-10%] w-[45vw] h-[45vw] rounded-full bg-fuchsia-900/10 blur-[150px] pointer-events-none z-0" />
 
       {/* 1. HERO SECTION */}
-      <main className="min-h-screen w-full flex flex-col justify-center px-8 md:px-24 relative overflow-hidden z-10">
-        {/* Garis Grid Tipis */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#24141a_1px,transparent_1px),linear-gradient(to_bottom,#24141a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_60%,transparent_100%)] opacity-30 pointer-events-none" />
-
+      <main className="min-h-screen w-full flex flex-col justify-center px-8 md:px-24 relative z-10">
         <motion.div 
           variants={containerVariants}
           initial="initial"
@@ -92,7 +93,7 @@ export default function Home() {
 
           <div className="overflow-hidden max-w-2xl mt-2">
             <motion.p variants={textVariants} className="text-zinc-400 text-lg md:text-xl font-light leading-relaxed">
-              Halo, saya <span className="text-white font-medium border-b border-rose-500/40 pb-1">Fadli</span>. Saya membangun pengalaman web interaktif dengan harmoni visual yang memikat dan animasi presisi tinggi.
+              Halo, saya <span className="text-white font-medium border-b border-rose-500/40 pb-1">Fadli</span>. Saya membangun pengalaman web interaktif dengan harmoni visual yang memikat dan animasi presisi high.
             </motion.p>
           </div>
 
@@ -167,25 +168,104 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. CONTACT / FOOTER SECTION */}
-      <section id="contact" className="w-full bg-[#060304] px-8 md:px-24 py-28 border-t border-rose-950/20 relative z-10">
-        <div className="max-w-7xl mx-auto flex flex-col justify-between">
+      {/* 3. CONTACT / FOOTER SECTION (MODERN QR CODE SCANNER STYLE) */}
+      <section id="contact" className="w-full bg-[#060304] px-8 md:px-24 py-28 border-t border-rose-950/20 relative z-10 overflow-hidden">
+        
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-rose-500/10 blur-[100px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
           
-          <div className="mb-24">
-            <p className="text-rose-500/50 font-mono text-xs uppercase tracking-[0.25em] mb-4">// GET IN TOUCH</p>
-            <a 
-              href="mailto:fadli@example.com" 
-              className="text-4xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 via-rose-100 to-rose-400 hover:opacity-80 transition-opacity duration-300 block break-words"
-            >
-              Mari Bekerja Sama.
-            </a>
+          <div className="mb-12">
+            <p className="text-rose-500/60 font-mono text-xs uppercase tracking-[0.25em] mb-3">// CONNECT WITH ME</p>
+            <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-4">Mari Bekerja Sama</h2>
+            <p className="text-zinc-400 max-w-md mx-auto font-light text-sm md:text-base leading-relaxed">
+              Pindai kode di bawah ini langsung menggunakan ponselmu untuk terhubung secara instan.
+            </p>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center pt-8 border-t border-rose-950/30 gap-6 text-xs font-mono text-zinc-500">
+          {/* DISPLAY DUA QR CODE MELAYANG */}
+          <div className="flex flex-col sm:flex-row gap-12 my-8 justify-center items-center w-full">
+            
+            {/* QR CODE WHATSAPP */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="group relative p-6 bg-[#0d070b] border border-rose-950/40 rounded-2xl flex flex-col items-center backdrop-blur-sm"
+            >
+              <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-rose-500/40 group-hover:border-rose-500 transition-colors" />
+              <div className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-rose-500/40 group-hover:border-rose-500 transition-colors" />
+              <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-rose-500/40 group-hover:border-rose-500 transition-colors" />
+              <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-rose-500/40 group-hover:border-rose-500 transition-colors" />
+
+              <div className="w-48 h-48 bg-white rounded-xl overflow-hidden p-2 shadow-xl shadow-rose-950/20 transition-transform duration-500 group-hover:scale-105">
+                <img 
+                  src="qr-wa.jpeg.jpeg" // <-- Sudah disamakan dengan file kamu
+                  alt="WhatsApp QR Code"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <span className="mt-4 font-mono text-xs tracking-widest text-zinc-400 group-hover:text-rose-400 transition-colors">
+                [ SCAN WHATSAPP ]
+              </span>
+            </motion.div>
+
+            {/* QR CODE INSTAGRAM */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="group relative p-6 bg-[#0d070b] border border-rose-950/40 rounded-2xl flex flex-col items-center backdrop-blur-sm"
+            >
+              <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-rose-500/40 group-hover:border-rose-500 transition-colors" />
+              <div className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-rose-500/40 group-hover:border-rose-500 transition-colors" />
+              <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-rose-500/40 group-hover:border-rose-500 transition-colors" />
+              <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-rose-500/40 group-hover:border-rose-500 transition-colors" />
+
+              <div className="w-48 h-48 bg-white rounded-xl overflow-hidden p-2 shadow-xl shadow-rose-950/20 transition-transform duration-500 group-hover:scale-105">
+                <img 
+                  src="qr-ig.jpeg.jpeg" // <-- Sudah disamakan dengan file kamu
+                  alt="Instagram QR Code"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <span className="mt-4 font-mono text-xs tracking-widest text-zinc-400 group-hover:text-rose-400 transition-colors">
+                [ SCAN INSTAGRAM ]
+              </span>
+            </motion.div>
+
+          </div>
+
+          {/* TAUTAN CADANGAN */}
+          <div className="mt-12 text-zinc-500 text-xs font-mono max-w-xl">
+            <p className="mb-4">Membuka lewat ponsel? Tautan langsung:</p>
+            <div className="flex flex-wrap justify-center gap-6 text-zinc-400">
+              <a 
+                href="https://wa.me/6288225004758" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-rose-400 transition-colors border-b border-zinc-800 pb-1"
+              >
+                WHATSAPP DIRECT
+              </a>
+              <a 
+                href="https://instagram.com/im.bydoll_" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-rose-400 transition-colors border-b border-zinc-800 pb-1"
+              >
+                INSTAGRAM DIRECT
+              </a>
+            </div>
+          </div>
+
+          {/* FOOTER BOTTOM */}
+          <div className="w-full flex flex-col md:flex-row justify-between items-center pt-8 mt-24 border-t border-rose-950/30 gap-6 text-xs font-mono text-zinc-500">
             <div className="flex gap-8">
               <a href="https://github.com" target="_blank" className="hover:text-rose-400 transition-colors tracking-widest">GITHUB</a>
               <a href="https://linkedin.com" target="_blank" className="hover:text-rose-400 transition-colors tracking-widest">LINKEDIN</a>
-              <a href="https://instagram.com" target="_blank" className="hover:text-rose-400 transition-colors tracking-widest">INSTAGRAM</a>
             </div>
             <p className="tracking-wider">© 2026 Fadli. Crafted with elegance.</p>
           </div>
