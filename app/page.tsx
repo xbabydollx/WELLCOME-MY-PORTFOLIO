@@ -177,7 +177,7 @@ export default function Home() {
           
           <div className="mb-12">
             <p className="text-rose-500/60 font-mono text-xs uppercase tracking-[0.25em] mb-3">// CONNECT WITH ME</p>
-            <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-4">Mari Bekerja Sama</h2>
+            <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-4">Ready to Start Your Next Project?</h2>
             <p className="text-zinc-400 max-w-md mx-auto font-light text-sm md:text-base leading-relaxed">
               Pindai kode di bawah ini langsung menggunakan ponselmu untuk terhubung secara instan.
             </p>
@@ -240,7 +240,7 @@ export default function Home() {
 
           {/* TAUTAN CADANGAN */}
           <div className="mt-12 text-zinc-500 text-xs font-mono max-w-xl">
-            <p className="mb-4">Membuka lewat ponsel? Tautan langsung:</p>
+            <p className="mb-4">Scan QR dari perangkat lain, atau gunakan tautan langsung di bawah.</p>
             <div className="flex flex-wrap justify-center gap-6 text-zinc-400">
               <a 
                 href="https://wa.me/6288225004758" 
@@ -267,7 +267,7 @@ export default function Home() {
               <a href="https://github.com/xbabydollx" target="_blank" className="hover:text-rose-400 transition-colors tracking-widest">GITHUB</a>
               <a href="https://linkedin.com" target="_blank" className="hover:text-rose-400 transition-colors tracking-widest">LINKEDIN</a>
             </div>
-            <p className="tracking-wider">© 2026 Fadli. Crafted with elegance.</p>
+            <p className="tracking-wider">Designed & Developed by IM.BYDOLL</p>
           </div>
 
         </div>
