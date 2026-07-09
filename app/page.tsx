@@ -86,7 +86,7 @@ export default function Home() {
             <motion.h1 variants={textVariants} className="text-5xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-6">
               CREATIVE <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-rose-200 to-rose-400">
-                FRONTEND DEV.
+                WEB DEV.
               </span>
             </motion.h1>
           </div>
@@ -264,7 +264,7 @@ export default function Home() {
           {/* FOOTER BOTTOM */}
           <div className="w-full flex flex-col md:flex-row justify-between items-center pt-8 mt-24 border-t border-rose-950/30 gap-6 text-xs font-mono text-zinc-500">
             <div className="flex gap-8">
-              <a href="https://github.com" target="_blank" className="hover:text-rose-400 transition-colors tracking-widest">GITHUB</a>
+              <a href="https://github.com/xbabydollx" target="_blank" className="hover:text-rose-400 transition-colors tracking-widest">GITHUB</a>
               <a href="https://linkedin.com" target="_blank" className="hover:text-rose-400 transition-colors tracking-widest">LINKEDIN</a>
             </div>
             <p className="tracking-wider">© 2026 Fadli. Crafted with elegance.</p>
