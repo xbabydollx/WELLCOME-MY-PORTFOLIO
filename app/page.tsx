@@ -93,7 +93,7 @@ export default function Home() {
 
           <div className="overflow-hidden max-w-2xl mt-2">
             <motion.p variants={textVariants} className="text-zinc-400 text-lg md:text-xl font-light leading-relaxed">
-              Halo, saya <span className="text-white font-medium border-b border-rose-500/40 pb-1">Fadli</span>. Saya membangun pengalaman web interaktif dengan harmoni visual yang memikat dan animasi presisi high.
+              Halo, saya <span className="text-white font-medium border-b border-rose-500/40 pb-1">Im.bydoll</span>. Saya membangun pengalaman web interaktif dengan harmoni visual yang memikat dan animasi presisi high.
             </motion.p>
           </div>
 
@@ -111,7 +111,7 @@ export default function Home() {
         </motion.div>
 
         <div className="absolute bottom-12 right-12 hidden md:block font-mono text-xs tracking-widest text-rose-300/20">
-          [ FADLI // PORTFOLIO ©2026 ]
+          [ IM.BYDOLL // PORTFOLIO ©2026 ]
         </div>
       </main>
 
