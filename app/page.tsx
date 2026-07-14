@@ -32,6 +32,7 @@ export default function Home() {
       category: "Web Development / UI/UX",
       size: "md:col-span-2 h-[400px]",
       image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop",
+      link: "#",
     },
     {
       id: 2,
@@ -39,6 +40,7 @@ export default function Home() {
       category: "WebGL / Next.js",
       size: "md:col-span-1 h-[400px]",
       image: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?q=80&w=800&auto=format&fit=crop",
+      link: "#",
     },
     {
       id: 3,
@@ -46,13 +48,15 @@ export default function Home() {
       category: "SaaS / Frontend",
       size: "md:col-span-1 h-[500px]",
       image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=800&auto=format&fit=crop",
+      link: "#",
     },
     {
       id: 4,
-      title: "Creative Studio Portfolio",
-      category: "Framer Motion / Design",
+      title: "Agency Creative Portfolio",
+      category: "Framer Motion / Next.js",
       size: "md:col-span-2 h-[500px]",
       image: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=800&auto=format&fit=crop",
+      link: "https://websiteaiso.vercel.app/",
     },
   ];
 
@@ -131,13 +135,16 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {projects.map((project) => (
-              <motion.div
+              <motion.a
                 key={project.id}
+                href={project.link}
+                target={project.link.startsWith("http") ? "_blank" : undefined}
+                rel={project.link.startsWith("http") ? "noopener noreferrer" : undefined}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className={`group relative rounded-2xl overflow-hidden bg-[#130b0f] border border-rose-950/30 flex flex-col justify-end p-8 shadow-2xl transition-all duration-500 hover:border-rose-500/30 ${project.size}`}
+                className={`group relative rounded-2xl overflow-hidden bg-[#130b0f] border border-rose-950/30 flex flex-col justify-end p-8 shadow-2xl transition-all duration-500 hover:border-rose-500/30 cursor-pointer ${project.size}`}
               >
                 <div className="absolute inset-0 w-full h-full overflow-hidden">
                   <img 
@@ -161,7 +168,7 @@ export default function Home() {
                     <span className="text-rose-400 text-lg">↗</span>
                   </div>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
 
@@ -201,7 +208,7 @@ export default function Home() {
 
               <div className="w-48 h-48 bg-white rounded-xl overflow-hidden p-2 shadow-xl shadow-rose-950/20 transition-transform duration-500 group-hover:scale-105">
                 <img 
-                  src="qr-wa.jpeg.jpeg" // <-- Sudah disamakan dengan file kamu
+                  src="qr-wa.jpeg.jpeg"
                   alt="WhatsApp QR Code"
                   className="w-full h-full object-contain"
                 />
@@ -226,7 +233,7 @@ export default function Home() {
 
               <div className="w-48 h-48 bg-white rounded-xl overflow-hidden p-2 shadow-xl shadow-rose-950/20 transition-transform duration-500 group-hover:scale-105">
                 <img 
-                  src="qr-ig.jpeg.jpeg" // <-- Sudah disamakan dengan file kamu
+                  src="qr-ig.jpeg.jpeg"
                   alt="Instagram QR Code"
                   className="w-full h-full object-contain"
                 />
