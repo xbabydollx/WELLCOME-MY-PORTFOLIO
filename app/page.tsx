@@ -55,7 +55,8 @@ export default function Home() {
       title: "Agency Creative Portfolio",
       category: "Framer Motion / Next.js",
       size: "md:col-span-2 h-[500px]",
-      image: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=800&auto=format&fit=crop",
+      // GANTI BAGIAN IMAGE DI BAWAH INI:
+      image: "https://api.microlink.io/?url=https%3A%2F%2Fwebsiteaiso.vercel.app%2F&screenshot=true&embed=screenshot.url",
       link: "https://websiteaiso.vercel.app/",
     },
   ];
